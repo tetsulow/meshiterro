@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = ユーザーの取得
-    @user.ユーザーのアップデート
-    redirect_to ユーザーの詳細ページへのパス
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to edit_user_path(@user.id)
   end
 
   private
